@@ -70,7 +70,7 @@ export default {
     },
     mounted(){
         this.scroll=new Bscroll(this.$refs.wrapper,{mouseWheel: true, click: true, tap: true})
-        console.log(this.scroll);
+        //console.log(this.scroll);
     }
 };
 </script>

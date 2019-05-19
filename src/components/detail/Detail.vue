@@ -8,13 +8,16 @@
         ></detail-banner>
         <detail-header :sightName="sightName"></detail-header>
         <attrac-infor></attrac-infor>
-        <div class="content"></div>
+        <detail-announce></detail-announce>
+        <detail-recom></detail-recom>
     </div>
 </template>
 <script>
     import DetailBanner from './base/DetailBanner'
     import AttracInfor from './base/AttracInfor'
     import DetailHeader from './base/DetailHeader'
+    import DetailRecom from './base/DetailRecom'
+    import DetailAnnounce from './base/DetailAnnounce'
     export default {
         name:"Detail",
         data () {
@@ -26,8 +29,10 @@
         },
         components:{
             DetailBanner,
+            DetailHeader,
             AttracInfor,
-            DetailHeader
+            DetailAnnounce,
+            DetailRecom
         },
         mounted(){
             this.$axios.get("http://localhost:8080/static/mock/detail.json",{
@@ -42,8 +47,7 @@
                 this.gallaryImgs=data.gallaryImgs
                 //this.List=data.categoryList
             })
-        },
-        
+        }
     }
 </script>
 <style lang="stylus" scoped>
